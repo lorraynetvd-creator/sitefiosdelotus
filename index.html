@@ -2,17 +2,19 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<title>Fios de Lotus — Alongamento de Cílios em Diadema</title>
-<script src="./vendor/react.js"></script>
-<script src="./vendor/react-dom.js"></script>
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fios de Lotus | Alongamento de Cílios em Diadema</title>
+<meta name="description" content="Fios de Lotus: alongamento de cílios em Diadema - SP com a Mirella Dias. 10 técnicas, atendimento personalizado e agendamento pelo WhatsApp.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&amp;family=Allura&amp;family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;display=swap">
 <style>
+*,*::before,*::after{box-sizing:border-box}
+img{max-width:100%}
+body{background:#FFFCFA;color:#49363C}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #A3536F;outline-offset:3px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+
 body{margin:0;background:#FFFCFA}
 html{scroll-behavior:smooth}
 a{color:#A3536F}a:hover{color:#49363C}
@@ -32,10 +34,10 @@ a{color:#A3536F}a:hover{color:#49363C}
 @media (max-width:720px){.t-row{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -24px;padding:4px 24px 16px;scroll-padding:0 24px;-webkit-overflow-scrolling:touch}.t-row article{flex:0 0 86%;scroll-snap-align:start}.t-hint{display:inline-flex}}
 @media (max-width:480px){.t-img{width:64px;height:64px}}
 </style>
-</helmet>
-<div style="font-family: 'LT Soul', 'Crimson Pro', Georgia, serif; color: #49363C; background: #FFFCFA; width: 100%; overflow-x: hidden">
 
-  <!-- HEADER -->
+</head>
+<body>
+<div style="font-family: 'LT Soul', 'Crimson Pro', Georgia, serif; color: #49363C; background: #FFFCFA; width: 100%; overflow-x: hidden">
   <header style="background: #F7E9EC; border-bottom: 1px solid #EBD3DA">
     <div style="max-width: 1240px; margin: 0 auto; padding: 16px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 16px">
       <a href="#inicio" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #49363C">
@@ -46,24 +48,22 @@ a{color:#A3536F}a:hover{color:#49363C}
         </span>
       </a>
       <div class="nav-sm">
-        <a href="{{wa}}" style="background: {{accent}}; color: #FFFFFF; text-decoration: none; padding: 12px 18px; border-radius: 999px; font-weight: 600; font-size: 15px">Agendar</a>
-        <button type="button" onClick="{{toggleMenu}}" aria-label="{{menuLabel}}" aria-expanded="{{menuExpanded}}" style="width: 44px; height: 44px; border-radius: 50%; border: 1px solid #DDB9C4; background: #FFFCFA; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; padding: 0">
+        <a href="https://wa.me/5511940800684?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20na%20Fios%20de%20Lotus." style="background: #A3536F; color: #FFFFFF; text-decoration: none; padding: 12px 18px; border-radius: 999px; font-weight: 600; font-size: 15px">Agendar</a>
+        <button type="button" id="menu-btn" aria-controls="site-nav" aria-label="Abrir menu" aria-expanded="false" style="width: 44px; height: 44px; border-radius: 50%; border: 1px solid #DDB9C4; background: #FFFCFA; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; padding: 0">
           <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#49363C" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
         </button>
       </div>
-      <nav aria-label="Navegação principal" class="nav-links {{navClass}}" style="font-size: 15px; font-weight: 500; letter-spacing: 0.5px">
-        <a class="nav-item" href="#sobre" onClick="{{closeMenu}}" style="color: #49363C; text-decoration: none; padding: 12px 0">Sobre</a>
-        <a class="nav-item" href="#servicos" onClick="{{closeMenu}}" style="color: #49363C; text-decoration: none; padding: 12px 0">Serviços</a>
-        <a class="nav-item" href="#resultados" onClick="{{closeMenu}}" style="color: #49363C; text-decoration: none; padding: 12px 0">Resultados</a>
-        <a class="nav-item" href="#depoimentos" onClick="{{closeMenu}}" style="color: #49363C; text-decoration: none; padding: 12px 0">Depoimentos</a>
-        <a class="nav-item" href="#duvidas" onClick="{{closeMenu}}" style="color: #49363C; text-decoration: none; padding: 12px 0">Dúvidas</a>
-        <a class="nav-item" href="#contato" onClick="{{closeMenu}}" style="color: #49363C; text-decoration: none; padding: 12px 0">Contato</a>
-        <a class="nav-cta-lg" href="{{wa}}" style="background: {{accent}}; color: #FFFFFF; text-decoration: none; padding: 13px 22px; border-radius: 999px; font-weight: 600">Agendar</a>
+      <nav id="site-nav" aria-label="Navegação principal" class="nav-links " style="font-size: 15px; font-weight: 500; letter-spacing: 0.5px">
+        <a class="nav-item" href="#sobre" style="color: #49363C; text-decoration: none; padding: 12px 0">Sobre</a>
+        <a class="nav-item" href="#servicos" style="color: #49363C; text-decoration: none; padding: 12px 0">Serviços</a>
+        <a class="nav-item" href="#resultados" style="color: #49363C; text-decoration: none; padding: 12px 0">Resultados</a>
+        <a class="nav-item" href="#depoimentos" style="color: #49363C; text-decoration: none; padding: 12px 0">Depoimentos</a>
+        <a class="nav-item" href="#duvidas" style="color: #49363C; text-decoration: none; padding: 12px 0">Dúvidas</a>
+        <a class="nav-item" href="#contato" style="color: #49363C; text-decoration: none; padding: 12px 0">Contato</a>
+        <a class="nav-cta-lg" href="https://wa.me/5511940800684?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20na%20Fios%20de%20Lotus." style="background: #A3536F; color: #FFFFFF; text-decoration: none; padding: 13px 22px; border-radius: 999px; font-weight: 600">Agendar</a>
       </nav>
     </div>
   </header>
-
-  <!-- 01 HERO -->
   <section id="inicio" style="background: #F7E9EC; position: relative">
     <div style="max-width: 1240px; margin: 0 auto; padding: 72px 24px 96px; display: flex; flex-wrap: wrap; align-items: center; gap: 56px">
       <div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
@@ -74,7 +74,7 @@ a{color:#A3536F}a:hover{color:#49363C}
         <h1 style="margin: 0; font-family: Quicksand, system-ui, sans-serif; font-weight: 600; font-size: clamp(42px, 5.4vw, 74px); line-height: 1.06; letter-spacing: -0.5px; color: #49363C">Realce sua beleza. <em style="display: block; margin-top: 6px; font-family: 'Allura', cursive; font-weight: 400; font-style: normal; font-size: 1.3em; line-height: 0.9; letter-spacing: 0; color: #A3536F">Valorize seu olhar.</em></h1>
         <p style="margin: 0; font-size: 19px; line-height: 1.75; max-width: 520px; color: #5E4850">Na Fios de Lotus, cada detalhe importa. Oferecemos serviços especializados em alongamento de cílios, com atendimento personalizado, cuidado e dedicação para valorizar sua beleza natural.</p>
         <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 4px">
-          <a href="{{wa}}" style="display: inline-flex; align-items: center; gap: 10px; background: {{accent}}; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 17px; padding: 18px 30px; border-radius: 999px; box-shadow: 0 10px 24px rgba(163,83,111,0.22)">
+          <a href="https://wa.me/5511940800684?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20na%20Fios%20de%20Lotus." style="display: inline-flex; align-items: center; gap: 10px; background: #A3536F; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 17px; padding: 18px 30px; border-radius: 999px; box-shadow: 0 10px 24px rgba(163,83,111,0.22)">
             <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5z"></path></svg>
             Agende pelo WhatsApp
           </a>
@@ -88,7 +88,7 @@ a{color:#A3536F}a:hover{color:#49363C}
       </div>
       <div style="flex: 1 1 420px; min-width: 0; position: relative; display: flex; justify-content: center">
         <div style="position: absolute; inset: 24px -12px -18px 36px; border: 1px solid #C9A588; border-radius: 300px 300px 28px 28px"></div>
-        <img src="./assets/2e32ac5913c235e043684bf6aaa41071.jpg" alt="Mirella Dias, proprietária da Fios de Lotus" style="position: relative; display: block; width: 100%; max-width: 480px; height: 600px; object-fit: cover; object-position: 50% 20%; border-radius: 300px 300px 28px 28px; background: #E8B8C5; box-shadow: 0 30px 60px rgba(73,54,60,0.12)">
+        <img src="img/mirela-hero.jpg" alt="Mirella Dias, proprietária da Fios de Lotus" style="position: relative; display: block; width: 100%; max-width: 480px; height: 600px; object-fit: cover; object-position: 50% 20%; border-radius: 300px 300px 28px 28px; background: #E8B8C5; box-shadow: 0 30px 60px rgba(73,54,60,0.12)">
         <div style="position: absolute; left: 0; bottom: 40px; max-width: 290px; background: #FFFCFA; border-radius: 18px; padding: 18px 20px; box-shadow: 0 14px 34px rgba(73,54,60,0.12); display: flex; align-items: flex-start; gap: 14px">
           <span style="width: 40px; height: 40px; border-radius: 50%; background: #F7E9EC; display: flex; align-items: center; justify-content: center">
             <svg aria-hidden="true" width="22" height="14" viewBox="0 0 64 40" fill="none" stroke="#A3536F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M32 6c5 6 6 14 0 26-6-12-5-20 0-26z"></path><path d="M32 32c-3-9-9-15-18-17 1 9 7 15 18 17z"></path><path d="M32 32c3-9 9-15 18-17-1 9-7 15-18 17z"></path></svg>
@@ -101,8 +101,6 @@ a{color:#A3536F}a:hover{color:#49363C}
       </div>
     </div>
   </section>
-
-  <!-- 02 SOBRE -->
   <section id="sobre" style="background: #FFFCFA">
     <div style="max-width: 1240px; margin: 0 auto; padding: 112px 24px; display: flex; flex-wrap: wrap-reverse; align-items: center; gap: 72px">
       <div style="flex: 1 1 100%; max-width: 760px; margin: 0 auto; min-width: 0; display: flex; flex-direction: column; gap: 22px">
@@ -120,8 +118,6 @@ a{color:#A3536F}a:hover{color:#49363C}
       </div>
     </div>
   </section>
-
-  <!-- 03 SERVIÇOS -->
   <section id="servicos" style="background: #F7E9EC">
     <div style="max-width: 1240px; margin: 0 auto; padding: 112px 24px; display: flex; flex-direction: column; gap: 48px">
       <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px; max-width: 680px; margin: 0 auto">
@@ -137,31 +133,51 @@ a{color:#A3536F}a:hover{color:#49363C}
           <span style="font-size: 16px; color: #5E4850; flex-basis: 100%">Para quem quer um olhar delicado no dia a dia</span>
         </div>
         <div class="t-row">
-          <sc-for list="{{leves}}" as="t" hint-placeholder-count="2">
+          
               <article style="background: #FFFCFA; border-radius: 22px; padding: 20px; display: flex; gap: 18px; align-items: flex-start; box-shadow: 0 6px 24px rgba(73,54,60,0.05)">
-                <img class="t-img" src="{{t.img}}" alt="{{t.alt}}" style="flex-shrink: 0; display: block; object-fit: cover; border-radius: 50%; border: 3px solid #F7E9EC; box-shadow: 0 0 0 1px #E4C9B6; background: #F7E9EC">
+                <img class="t-img" src="img/t-volume-brasileiro.jpg" alt="Cílios com a técnica Volume Brasileiro" style="flex-shrink: 0; display: block; object-fit: cover; border-radius: 50%; border: 3px solid #F7E9EC; box-shadow: 0 0 0 1px #E4C9B6; background: #F7E9EC">
                 <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px">
                   <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 12px">
-                    <h4 style="margin: 0; font-family: Quicksand, system-ui, sans-serif; font-weight: 600; font-size: 20px; line-height: 1.25; color: #49363C">{{t.name}}</h4>
-                    <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: #7A5640; white-space: nowrap"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A77A57" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>{{t.time}}</span>
+                    <h4 style="margin: 0; font-family: Quicksand, system-ui, sans-serif; font-weight: 600; font-size: 20px; line-height: 1.25; color: #49363C">Volume Brasileiro</h4>
+                    <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: #7A5640; white-space: nowrap"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A77A57" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>1h30 a 2h</span>
                   </div>
-                  <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #49363C">{{t.desc}}</p>
-                  <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #6E555E">{{t.tech}}</p>
+                  <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #49363C">Volume leve e natural, ideal para o dia a dia.</p>
+                  <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #6E555E">2 fios pré-moldados em Y · cor preta</p>
                   <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-top: 6px; padding-top: 12px; border-top: 1px solid #F0DDE2">
                     <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px">
-                      <span style="display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap"><span style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #6E555E">Aplicação</span><span style="font-family: Quicksand, system-ui, sans-serif; font-size: 18px; color: #A3536F; font-weight: 600">{{t.apply}}</span></span>
-                      <sc-if value="{{t.hasMaint}}" hint-placeholder-val="{{ true }}">
-                        <span style="display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap"><span style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #6E555E">Manutenção</span><span style="font-family: Quicksand, system-ui, sans-serif; font-size: 18px; color: #A3536F; font-weight: 600">{{t.maint}}</span></span>
-                      </sc-if>
-                      <sc-if value="{{t.noMaint}}" hint-placeholder-val="{{ false }}">
-                        <span style="font-size: 13px; color: #6E555E; white-space: nowrap">Sem manutenção</span>
-                      </sc-if>
+                      <span style="display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap"><span style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #6E555E">Aplicação</span><span style="font-family: Quicksand, system-ui, sans-serif; font-size: 18px; color: #A3536F; font-weight: 600">R$ 140,00</span></span>
+                      
+                        <span style="display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap"><span style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #6E555E">Manutenção</span><span style="font-family: Quicksand, system-ui, sans-serif; font-size: 18px; color: #A3536F; font-weight: 600">R$ 90,00</span></span>
+                      
+                      
                     </div>
-                    <a href="{{t.link}}" style="display: inline-flex; align-items: center; gap: 6px; background: {{accent}}; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 18px; border-radius: 999px; white-space: nowrap">Quero agendar</a>
+                    <a href="https://wa.me/5511940800684?text=Ol%C3%A1!%20Gostaria%20de%20agendar%3A%20Volume%20Brasileiro" style="display: inline-flex; align-items: center; gap: 6px; background: #A3536F; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 18px; border-radius: 999px; white-space: nowrap">Quero agendar</a>
                   </div>
                 </div>
               </article>
-          </sc-for>
+          
+              <article style="background: #FFFCFA; border-radius: 22px; padding: 20px; display: flex; gap: 18px; align-items: flex-start; box-shadow: 0 6px 24px rgba(73,54,60,0.05)">
+                <img class="t-img" src="img/t-volume-brasileiro-castanho.jpg" alt="Cílios com a técnica Volume Brasileiro Castanho" style="flex-shrink: 0; display: block; object-fit: cover; border-radius: 50%; border: 3px solid #F7E9EC; box-shadow: 0 0 0 1px #E4C9B6; background: #F7E9EC">
+                <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+                  <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 12px">
+                    <h4 style="margin: 0; font-family: Quicksand, system-ui, sans-serif; font-weight: 600; font-size: 20px; line-height: 1.25; color: #49363C">Volume Brasileiro Castanho</h4>
+                    <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: #7A5640; white-space: nowrap"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A77A57" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>1h40 a 2h</span>
+                  </div>
+                  <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #49363C">Volume leve e natural, com fios castanhos para um efeito ainda mais suave.</p>
+                  <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #6E555E">2 fios pré-moldados em Y · cor castanha</p>
+                  <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-top: 6px; padding-top: 12px; border-top: 1px solid #F0DDE2">
+                    <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px">
+                      <span style="display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap"><span style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #6E555E">Aplicação</span><span style="font-family: Quicksand, system-ui, sans-serif; font-size: 18px; color: #A3536F; font-weight: 600">R$ 140,00</span></span>
+                      
+                        <span style="display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap"><span style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #6E555E">Manutenção</span><span style="font-family: Quicksand, system-ui, sans-serif; font-size: 18px; color: #A3536F; font-weight: 600">R$ 90,00</span></span>
+                      
+                      
+                    </div>
+                    <a href="https://wa.me/5511940800684?text=Ol%C3%A1!%20Gostaria%20de%20agendar%3A%20Volume%20Brasileiro%20Castanho" style="display: inline-flex; align-items: center; gap: 6px; background: #A3536F; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 18px; border-radius: 999px; white-space: nowrap">Quero agendar</a>
+                  </div>
+                </div>
+              </article>
+          
         </div>
       </div>
 
@@ -172,31 +188,51 @@ a{color:#A3536F}a:hover{color:#49363C}
           <span style="font-size: 16px; color: #5E4850; flex-basis: 100%">Fios agrupados, com acabamento marcante</span>
         </div>
         <div class="t-row">
-          <sc-for list="{{molhado}}" as="t" hint-placeholder-count="2">
+          
               <article style="background: #FFFCFA; border-radius: 22px; padding: 20px; display: flex; gap: 18px; align-items: flex-start; box-shadow: 0 6px 24px rgba(73,54,60,0.05)">
-                <img class="t-img" src="{{t.img}}" alt="{{t.alt}}" style="flex-shrink: 0; display: block; object-fit: cover; border-radius: 50%; border: 3px solid #F7E9EC; box-shadow: 0 0 0 1px #E4C9B6; background: #F7E9EC">
+                <img class="t-img" src="img/t-volume-lotus.jpg" alt="Cílios com a técnica Volume Lótus" style="flex-shrink: 0; display: block; object-fit: cover; border-radius: 50%; border: 3px solid #F7E9EC; box-shadow: 0 0 0 1px #E4C9B6; background: #F7E9EC">
                 <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px">
                   <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 12px">
-                    <h4 style="margin: 0; font-family: Quicksand, system-ui, sans-serif; font-weight: 600; font-size: 20px; line-height: 1.25; color: #49363C">{{t.name}}</h4>
-                    <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: #7A5640; white-space: nowrap"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A77A57" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>{{t.time}}</span>
+                    <h4 style="margin: 0; font-family: Quicksand, system-ui, sans-serif; font-weight: 600; font-size: 20px; line-height: 1.25; color: #49363C">Volume Lótus</h4>
+                    <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: #7A5640; white-space: nowrap"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A77A57" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>1h40 a 2h</span>
                   </div>
-                  <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #49363C">{{t.desc}}</p>
-                  <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #6E555E">{{t.tech}}</p>
+                  <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #49363C">O efeito molhado com curvatura suave, para um resultado marcante e natural.</p>
+                  <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #6E555E">3 a 5 fios finos acoplados “fechados” · curvatura C</p>
                   <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-top: 6px; padding-top: 12px; border-top: 1px solid #F0DDE2">
                     <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px">
-                      <span style="display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap"><span style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #6E555E">Aplicação</span><span style="font-family: Quicksand, system-ui, sans-serif; font-size: 18px; color: #A3536F; font-weight: 600">{{t.apply}}</span></span>
-                      <sc-if value="{{t.hasMaint}}" hint-placeholder-val="{{ true }}">
-                        <span style="display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap"><span style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #6E555E">Manutenção</span><span style="font-family: Quicksand, system-ui, sans-serif; font-size: 18px; color: #A3536F; font-weight: 600">{{t.maint}}</span></span>
-                      </sc-if>
-                      <sc-if value="{{t.noMaint}}" hint-placeholder-val="{{ false }}">
-                        <span style="font-size: 13px; color: #6E555E; white-space: nowrap">Sem manutenção</span>
-                      </sc-if>
+                      <span style="display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap"><span style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #6E555E">Aplicação</span><span style="font-family: Quicksand, system-ui, sans-serif; font-size: 18px; color: #A3536F; font-weight: 600">R$ 150,00</span></span>
+                      
+                        <span style="display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap"><span style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #6E555E">Manutenção</span><span style="font-family: Quicksand, system-ui, sans-serif; font-size: 18px; color: #A3536F; font-weight: 600">R$ 100,00</span></span>
+                      
+                      
                     </div>
-                    <a href="{{t.link}}" style="display: inline-flex; align-items: center; gap: 6px; background: {{accent}}; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 18px; border-radius: 999px; white-space: nowrap">Quero agendar</a>
+                    <a href="https://wa.me/5511940800684?text=Ol%C3%A1!%20Gostaria%20de%20agendar%3A%20Volume%20L%C3%B3tus" style="display: inline-flex; align-items: center; gap: 6px; background: #A3536F; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 18px; border-radius: 999px; white-space: nowrap">Quero agendar</a>
                   </div>
                 </div>
               </article>
-          </sc-for>
+          
+              <article style="background: #FFFCFA; border-radius: 22px; padding: 20px; display: flex; gap: 18px; align-items: flex-start; box-shadow: 0 6px 24px rgba(73,54,60,0.05)">
+                <img class="t-img" src="img/t-efeito-molhado.jpg" alt="Cílios com a técnica Efeito Molhado" style="flex-shrink: 0; display: block; object-fit: cover; border-radius: 50%; border: 3px solid #F7E9EC; box-shadow: 0 0 0 1px #E4C9B6; background: #F7E9EC">
+                <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+                  <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 12px">
+                    <h4 style="margin: 0; font-family: Quicksand, system-ui, sans-serif; font-weight: 600; font-size: 20px; line-height: 1.25; color: #49363C">Efeito Molhado</h4>
+                    <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: #7A5640; white-space: nowrap"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A77A57" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>1h40 a 2h</span>
+                  </div>
+                  <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #49363C">Fios agrupados que imitam cílios molhados, com acabamento marcante.</p>
+                  <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #6E555E">3 a 5 fios finos acoplados “fechados”</p>
+                  <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-top: 6px; padding-top: 12px; border-top: 1px solid #F0DDE2">
+                    <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px">
+                      <span style="display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap"><span style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #6E555E">Aplicação</span><span style="font-family: Quicksand, system-ui, sans-serif; font-size: 18px; color: #A3536F; font-weight: 600">R$ 140,00</span></span>
+                      
+                        <span style="display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap"><span style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #6E555E">Manutenção</span><span style="font-family: Quicksand, system-ui, sans-serif; font-size: 18px; color: #A3536F; font-weight: 600">R$ 90,00</span></span>
+                      
+                      
+                    </div>
+                    <a href="https://wa.me/5511940800684?text=Ol%C3%A1!%20Gostaria%20de%20agendar%3A%20Efeito%20Molhado" style="display: inline-flex; align-items: center; gap: 6px; background: #A3536F; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 18px; border-radius: 999px; white-space: nowrap">Quero agendar</a>
+                  </div>
+                </div>
+              </article>
+          
         </div>
       </div>
 
@@ -207,31 +243,95 @@ a{color:#A3536F}a:hover{color:#49363C}
           <span style="font-size: 16px; color: #5E4850; flex-basis: 100%">Mais preenchimento e definição</span>
         </div>
         <div class="t-row">
-          <sc-for list="{{volume}}" as="t" hint-placeholder-count="4">
+          
               <article style="background: #FFFCFA; border-radius: 22px; padding: 20px; display: flex; gap: 18px; align-items: flex-start; box-shadow: 0 6px 24px rgba(73,54,60,0.05)">
-                <img class="t-img" src="{{t.img}}" alt="{{t.alt}}" style="flex-shrink: 0; display: block; object-fit: cover; border-radius: 50%; border: 3px solid #F7E9EC; box-shadow: 0 0 0 1px #E4C9B6; background: #F7E9EC">
+                <img class="t-img" src="img/t-volume-4d-cat.jpg" alt="Cílios com a técnica Volume 4D" style="flex-shrink: 0; display: block; object-fit: cover; border-radius: 50%; border: 3px solid #F7E9EC; box-shadow: 0 0 0 1px #E4C9B6; background: #F7E9EC">
                 <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px">
                   <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 12px">
-                    <h4 style="margin: 0; font-family: Quicksand, system-ui, sans-serif; font-weight: 600; font-size: 20px; line-height: 1.25; color: #49363C">{{t.name}}</h4>
-                    <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: #7A5640; white-space: nowrap"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A77A57" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>{{t.time}}</span>
+                    <h4 style="margin: 0; font-family: Quicksand, system-ui, sans-serif; font-weight: 600; font-size: 20px; line-height: 1.25; color: #49363C">Volume 4D</h4>
+                    <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: #7A5640; white-space: nowrap"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A77A57" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>1h40 a 2h</span>
                   </div>
-                  <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #49363C">{{t.desc}}</p>
-                  <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #6E555E">{{t.tech}}</p>
+                  <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #49363C">Volume delicado e preenchido, com mais definição que o brasileiro.</p>
+                  <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #6E555E">4 fios pré-moldados em W · cor preta</p>
                   <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-top: 6px; padding-top: 12px; border-top: 1px solid #F0DDE2">
                     <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px">
-                      <span style="display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap"><span style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #6E555E">Aplicação</span><span style="font-family: Quicksand, system-ui, sans-serif; font-size: 18px; color: #A3536F; font-weight: 600">{{t.apply}}</span></span>
-                      <sc-if value="{{t.hasMaint}}" hint-placeholder-val="{{ true }}">
-                        <span style="display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap"><span style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #6E555E">Manutenção</span><span style="font-family: Quicksand, system-ui, sans-serif; font-size: 18px; color: #A3536F; font-weight: 600">{{t.maint}}</span></span>
-                      </sc-if>
-                      <sc-if value="{{t.noMaint}}" hint-placeholder-val="{{ false }}">
-                        <span style="font-size: 13px; color: #6E555E; white-space: nowrap">Sem manutenção</span>
-                      </sc-if>
+                      <span style="display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap"><span style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #6E555E">Aplicação</span><span style="font-family: Quicksand, system-ui, sans-serif; font-size: 18px; color: #A3536F; font-weight: 600">R$ 140,00</span></span>
+                      
+                        <span style="display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap"><span style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #6E555E">Manutenção</span><span style="font-family: Quicksand, system-ui, sans-serif; font-size: 18px; color: #A3536F; font-weight: 600">R$ 90,00</span></span>
+                      
+                      
                     </div>
-                    <a href="{{t.link}}" style="display: inline-flex; align-items: center; gap: 6px; background: {{accent}}; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 18px; border-radius: 999px; white-space: nowrap">Quero agendar</a>
+                    <a href="https://wa.me/5511940800684?text=Ol%C3%A1!%20Gostaria%20de%20agendar%3A%20Volume%204D" style="display: inline-flex; align-items: center; gap: 6px; background: #A3536F; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 18px; border-radius: 999px; white-space: nowrap">Quero agendar</a>
                   </div>
                 </div>
               </article>
-          </sc-for>
+          
+              <article style="background: #FFFCFA; border-radius: 22px; padding: 20px; display: flex; gap: 18px; align-items: flex-start; box-shadow: 0 6px 24px rgba(73,54,60,0.05)">
+                <img class="t-img" src="img/t-volume-5d.jpg" alt="Cílios com a técnica Volume 5D" style="flex-shrink: 0; display: block; object-fit: cover; border-radius: 50%; border: 3px solid #F7E9EC; box-shadow: 0 0 0 1px #E4C9B6; background: #F7E9EC">
+                <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+                  <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 12px">
+                    <h4 style="margin: 0; font-family: Quicksand, system-ui, sans-serif; font-weight: 600; font-size: 20px; line-height: 1.25; color: #49363C">Volume 5D</h4>
+                    <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: #7A5640; white-space: nowrap"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A77A57" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>1h30 a 2h</span>
+                  </div>
+                  <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #49363C">Volume denso e marcante, sem perder a delicadeza.</p>
+                  <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #6E555E">5 fios pré-moldados em W · cor preta</p>
+                  <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-top: 6px; padding-top: 12px; border-top: 1px solid #F0DDE2">
+                    <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px">
+                      <span style="display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap"><span style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #6E555E">Aplicação</span><span style="font-family: Quicksand, system-ui, sans-serif; font-size: 18px; color: #A3536F; font-weight: 600">R$ 150,00</span></span>
+                      
+                        <span style="display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap"><span style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #6E555E">Manutenção</span><span style="font-family: Quicksand, system-ui, sans-serif; font-size: 18px; color: #A3536F; font-weight: 600">R$ 100,00</span></span>
+                      
+                      
+                    </div>
+                    <a href="https://wa.me/5511940800684?text=Ol%C3%A1!%20Gostaria%20de%20agendar%3A%20Volume%205D" style="display: inline-flex; align-items: center; gap: 6px; background: #A3536F; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 18px; border-radius: 999px; white-space: nowrap">Quero agendar</a>
+                  </div>
+                </div>
+              </article>
+          
+              <article style="background: #FFFCFA; border-radius: 22px; padding: 20px; display: flex; gap: 18px; align-items: flex-start; box-shadow: 0 6px 24px rgba(73,54,60,0.05)">
+                <img class="t-img" src="img/t-volume-5d-castanho.jpg" alt="Cílios com a técnica Volume 5D Castanho" style="flex-shrink: 0; display: block; object-fit: cover; border-radius: 50%; border: 3px solid #F7E9EC; box-shadow: 0 0 0 1px #E4C9B6; background: #F7E9EC">
+                <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+                  <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 12px">
+                    <h4 style="margin: 0; font-family: Quicksand, system-ui, sans-serif; font-weight: 600; font-size: 20px; line-height: 1.25; color: #49363C">Volume 5D Castanho</h4>
+                    <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: #7A5640; white-space: nowrap"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A77A57" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>1h40 a 2h</span>
+                  </div>
+                  <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #49363C">O volume do 5D com fios castanhos, para um olhar preenchido e mais suave.</p>
+                  <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #6E555E">5 fios pré-moldados em W · cor castanha</p>
+                  <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-top: 6px; padding-top: 12px; border-top: 1px solid #F0DDE2">
+                    <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px">
+                      <span style="display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap"><span style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #6E555E">Aplicação</span><span style="font-family: Quicksand, system-ui, sans-serif; font-size: 18px; color: #A3536F; font-weight: 600">R$ 150,00</span></span>
+                      
+                        <span style="display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap"><span style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #6E555E">Manutenção</span><span style="font-family: Quicksand, system-ui, sans-serif; font-size: 18px; color: #A3536F; font-weight: 600">R$ 100,00</span></span>
+                      
+                      
+                    </div>
+                    <a href="https://wa.me/5511940800684?text=Ol%C3%A1!%20Gostaria%20de%20agendar%3A%20Volume%205D%20Castanho" style="display: inline-flex; align-items: center; gap: 6px; background: #A3536F; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 18px; border-radius: 999px; white-space: nowrap">Quero agendar</a>
+                  </div>
+                </div>
+              </article>
+          
+              <article style="background: #FFFCFA; border-radius: 22px; padding: 20px; display: flex; gap: 18px; align-items: flex-start; box-shadow: 0 6px 24px rgba(73,54,60,0.05)">
+                <img class="t-img" src="img/t-efeito-wispy.jpg" alt="Cílios com a técnica Efeito Wispy" style="flex-shrink: 0; display: block; object-fit: cover; border-radius: 50%; border: 3px solid #F7E9EC; box-shadow: 0 0 0 1px #E4C9B6; background: #F7E9EC">
+                <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+                  <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 12px">
+                    <h4 style="margin: 0; font-family: Quicksand, system-ui, sans-serif; font-weight: 600; font-size: 20px; line-height: 1.25; color: #49363C">Efeito Wispy</h4>
+                    <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: #7A5640; white-space: nowrap"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A77A57" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>1h40 a 2h</span>
+                  </div>
+                  <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #49363C">Efeito texturizado, com pontas marcadas que dão leveza e um ar moderno ao olhar.</p>
+                  <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #6E555E">5 fios pré-moldados em W · cor castanha</p>
+                  <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-top: 6px; padding-top: 12px; border-top: 1px solid #F0DDE2">
+                    <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px">
+                      <span style="display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap"><span style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #6E555E">Aplicação</span><span style="font-family: Quicksand, system-ui, sans-serif; font-size: 18px; color: #A3536F; font-weight: 600">R$ 160,00</span></span>
+                      
+                        <span style="display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap"><span style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #6E555E">Manutenção</span><span style="font-family: Quicksand, system-ui, sans-serif; font-size: 18px; color: #A3536F; font-weight: 600">R$ 100,00</span></span>
+                      
+                      
+                    </div>
+                    <a href="https://wa.me/5511940800684?text=Ol%C3%A1!%20Gostaria%20de%20agendar%3A%20Efeito%20Wispy" style="display: inline-flex; align-items: center; gap: 6px; background: #A3536F; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 18px; border-radius: 999px; white-space: nowrap">Quero agendar</a>
+                  </div>
+                </div>
+              </article>
+          
         </div>
       </div>
 
@@ -242,38 +342,56 @@ a{color:#A3536F}a:hover{color:#49363C}
           <span style="font-size: 16px; color: #5E4850; flex-basis: 100%">Efeito levantado no canto externo dos olhos</span>
         </div>
         <div class="t-row">
-          <sc-for list="{{alongados}}" as="t" hint-placeholder-count="2">
+          
               <article style="background: #FFFCFA; border-radius: 22px; padding: 20px; display: flex; gap: 18px; align-items: flex-start; box-shadow: 0 6px 24px rgba(73,54,60,0.05)">
-                <img class="t-img" src="{{t.img}}" alt="{{t.alt}}" style="flex-shrink: 0; display: block; object-fit: cover; border-radius: 50%; border: 3px solid #F7E9EC; box-shadow: 0 0 0 1px #E4C9B6; background: #F7E9EC">
+                <img class="t-img" src="img/t-foxy-eyes-plus.jpg" alt="Cílios com a técnica Foxy Eyes Plus" style="flex-shrink: 0; display: block; object-fit: cover; border-radius: 50%; border: 3px solid #F7E9EC; box-shadow: 0 0 0 1px #E4C9B6; background: #F7E9EC">
                 <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px">
                   <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 12px">
-                    <h4 style="margin: 0; font-family: Quicksand, system-ui, sans-serif; font-weight: 600; font-size: 20px; line-height: 1.25; color: #49363C">{{t.name}}</h4>
-                    <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: #7A5640; white-space: nowrap"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A77A57" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>{{t.time}}</span>
+                    <h4 style="margin: 0; font-family: Quicksand, system-ui, sans-serif; font-weight: 600; font-size: 20px; line-height: 1.25; color: #49363C">Foxy Eyes Plus</h4>
+                    <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: #7A5640; white-space: nowrap"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A77A57" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>1h40 a 2h</span>
                   </div>
-                  <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #49363C">{{t.desc}}</p>
-                  <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #6E555E">{{t.tech}}</p>
+                  <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #49363C">Olhar alongado e levantado no canto externo, no estilo “raposa”.</p>
+                  <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #6E555E">5 fios pré-moldados · curvatura mais acentuada</p>
                   <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-top: 6px; padding-top: 12px; border-top: 1px solid #F0DDE2">
                     <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px">
-                      <span style="display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap"><span style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #6E555E">Aplicação</span><span style="font-family: Quicksand, system-ui, sans-serif; font-size: 18px; color: #A3536F; font-weight: 600">{{t.apply}}</span></span>
-                      <sc-if value="{{t.hasMaint}}" hint-placeholder-val="{{ true }}">
-                        <span style="display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap"><span style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #6E555E">Manutenção</span><span style="font-family: Quicksand, system-ui, sans-serif; font-size: 18px; color: #A3536F; font-weight: 600">{{t.maint}}</span></span>
-                      </sc-if>
-                      <sc-if value="{{t.noMaint}}" hint-placeholder-val="{{ false }}">
-                        <span style="font-size: 13px; color: #6E555E; white-space: nowrap">Sem manutenção</span>
-                      </sc-if>
+                      <span style="display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap"><span style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #6E555E">Aplicação</span><span style="font-family: Quicksand, system-ui, sans-serif; font-size: 18px; color: #A3536F; font-weight: 600">R$ 150,00</span></span>
+                      
+                        <span style="display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap"><span style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #6E555E">Manutenção</span><span style="font-family: Quicksand, system-ui, sans-serif; font-size: 18px; color: #A3536F; font-weight: 600">R$ 100,00</span></span>
+                      
+                      
                     </div>
-                    <a href="{{t.link}}" style="display: inline-flex; align-items: center; gap: 6px; background: {{accent}}; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 18px; border-radius: 999px; white-space: nowrap">Quero agendar</a>
+                    <a href="https://wa.me/5511940800684?text=Ol%C3%A1!%20Gostaria%20de%20agendar%3A%20Foxy%20Eyes%20Plus" style="display: inline-flex; align-items: center; gap: 6px; background: #A3536F; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 18px; border-radius: 999px; white-space: nowrap">Quero agendar</a>
                   </div>
                 </div>
               </article>
-          </sc-for>
+          
+              <article style="background: #FFFCFA; border-radius: 22px; padding: 20px; display: flex; gap: 18px; align-items: flex-start; box-shadow: 0 6px 24px rgba(73,54,60,0.05)">
+                <img class="t-img" src="img/t-volume-sirena.jpg" alt="Cílios com a técnica Volume Sirena" style="flex-shrink: 0; display: block; object-fit: cover; border-radius: 50%; border: 3px solid #F7E9EC; box-shadow: 0 0 0 1px #E4C9B6; background: #F7E9EC">
+                <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+                  <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 12px">
+                    <h4 style="margin: 0; font-family: Quicksand, system-ui, sans-serif; font-weight: 600; font-size: 20px; line-height: 1.25; color: #49363C">Volume Sirena</h4>
+                    <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: #7A5640; white-space: nowrap"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A77A57" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>1h</span>
+                  </div>
+                  <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #49363C">O efeito alongado do Foxy Eyes Plus em versão mais leve, com cerca de 60% de preenchimento.</p>
+                  <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #6E555E">4 fios pré-moldados · curvatura mais acentuada</p>
+                  <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-top: 6px; padding-top: 12px; border-top: 1px solid #F0DDE2">
+                    <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px">
+                      <span style="display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap"><span style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #6E555E">Aplicação</span><span style="font-family: Quicksand, system-ui, sans-serif; font-size: 18px; color: #A3536F; font-weight: 600">R$ 100,00</span></span>
+                      
+                      
+                        <span style="font-size: 13px; color: #6E555E; white-space: nowrap">Sem manutenção</span>
+                      
+                    </div>
+                    <a href="https://wa.me/5511940800684?text=Ol%C3%A1!%20Gostaria%20de%20agendar%3A%20Volume%20Sirena" style="display: inline-flex; align-items: center; gap: 6px; background: #A3536F; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 18px; border-radius: 999px; white-space: nowrap">Quero agendar</a>
+                  </div>
+                </div>
+              </article>
+          
         </div>
       </div>
 
     </div>
   </section>
-
-  <!-- 04 GALERIA -->
   <section id="resultados" style="background: #FFFCFA">
     <div style="max-width: 1240px; margin: 0 auto; padding: 112px 24px; display: flex; flex-direction: column; gap: 48px">
       <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px">
@@ -284,12 +402,12 @@ a{color:#A3536F}a:hover{color:#49363C}
         <p style="flex: 1 1 360px; margin: 0; font-size: 18px; line-height: 1.8; color: #5E4850; max-width: 480px">Cada detalhe importa. Confira alguns dos trabalhos realizados pela Fios de Lotus e inspire-se para encontrar o estilo que mais combina com você.</p>
       </div>
       <div class="gal">
-        <figure class="g-tall" style="margin: 0; position: relative; border-radius: 24px; overflow: hidden; background: #E8B8C5"><img src="./assets/ff0410084954e07052b5f3a980999deb.jpg" alt="Close de cílios alongados no estilo Foxy Eyes" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 35% 50%"><figcaption style="position: absolute; left: 14px; bottom: 14px; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; white-space: nowrap; background: rgba(255,252,250,0.6); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); color: #49363C; padding: 6px 10px; border-radius: 999px">Foxy Eyes · close</figcaption></figure>
-        <figure class="g-wide" style="margin: 0; position: relative; border-radius: 24px; overflow: hidden; background: #F7E9EC"><img src="./assets/9d059473007f8856cbf1de4aeb94483c.jpg" alt="Cliente com cílios Foxy Eyes" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; transform: scale(1.5); transform-origin: 50% 55%"><figcaption style="position: absolute; left: 14px; bottom: 14px; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; white-space: nowrap; background: rgba(255,252,250,0.6); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); color: #49363C; padding: 6px 10px; border-radius: 999px">Foxy Eyes</figcaption></figure>
-        <figure class="g-tall" style="margin: 0; position: relative; border-radius: 24px; overflow: hidden; background: #DDA7B7"><img src="./assets/aac98b92dc9d4245f6af3e4f05e582c4.jpg" alt="Cliente com cílios Efeito Molhado" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 54%; transform: scale(1.6); transform-origin: 50% 54%"><figcaption style="position: absolute; left: 14px; bottom: 14px; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; white-space: nowrap; background: rgba(255,252,250,0.6); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); color: #49363C; padding: 6px 10px; border-radius: 999px">Efeito Molhado</figcaption></figure>
-        <figure class="g-wide" style="margin: 0; position: relative; border-radius: 24px; overflow: hidden; background: #F2DDE3"><img src="./assets/888338f659a180c5c8d1e06866ea12ce.jpg" alt="Cliente com cílios Volume Brasileiro" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; transform: scale(1.3); transform-origin: 50% 45%"><figcaption style="position: absolute; left: 14px; bottom: 14px; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; white-space: nowrap; background: rgba(255,252,250,0.6); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); color: #49363C; padding: 6px 10px; border-radius: 999px">Volume Brasileiro</figcaption></figure>
-        <figure class="g-wide" style="margin: 0; position: relative; border-radius: 24px; overflow: hidden; background: #EFD0D9"><img src="./assets/25a0ba77b15cf5eef696e3b30cb2c94c.jpg" alt="Cliente com alongamento de cílios Volume 4D" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; transform: scale(1.5); transform-origin: 50% 55%"><figcaption style="position: absolute; left: 14px; bottom: 14px; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; white-space: nowrap; background: rgba(255,252,250,0.6); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); color: #49363C; padding: 6px 10px; border-radius: 999px">Volume 4D</figcaption></figure>
-        <figure class="g-wide" style="margin: 0; position: relative; border-radius: 24px; overflow: hidden; background: #E8B8C5"><img src="./assets/e3ceaa70fb07dc36ca5aa454a4b5a6db.jpg" alt="Close de cílios Efeito Wispy" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 52%"><figcaption style="position: absolute; left: 14px; bottom: 14px; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; white-space: nowrap; background: rgba(255,252,250,0.6); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); color: #49363C; padding: 6px 10px; border-radius: 999px">Efeito Wispy</figcaption></figure>
+        <figure class="g-tall" style="margin: 0; position: relative; border-radius: 24px; overflow: hidden; background: #E8B8C5"><img src="img/cilios-fox-close.jpg" alt="Close de cílios alongados no estilo Foxy Eyes" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 35% 50%"><figcaption style="position: absolute; left: 14px; bottom: 14px; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; white-space: nowrap; background: rgba(255,252,250,0.6); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); color: #49363C; padding: 6px 10px; border-radius: 999px">Foxy Eyes · close</figcaption></figure>
+        <figure class="g-wide" style="margin: 0; position: relative; border-radius: 24px; overflow: hidden; background: #F7E9EC"><img src="img/fox-eyes.jpg" alt="Cliente com cílios Foxy Eyes" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; transform: scale(1.5); transform-origin: 50% 55%"><figcaption style="position: absolute; left: 14px; bottom: 14px; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; white-space: nowrap; background: rgba(255,252,250,0.6); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); color: #49363C; padding: 6px 10px; border-radius: 999px">Foxy Eyes</figcaption></figure>
+        <figure class="g-tall" style="margin: 0; position: relative; border-radius: 24px; overflow: hidden; background: #DDA7B7"><img src="img/efeito-molhado-face.jpg" alt="Cliente com cílios Efeito Molhado" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 54%; transform: scale(1.6); transform-origin: 50% 54%"><figcaption style="position: absolute; left: 14px; bottom: 14px; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; white-space: nowrap; background: rgba(255,252,250,0.6); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); color: #49363C; padding: 6px 10px; border-radius: 999px">Efeito Molhado</figcaption></figure>
+        <figure class="g-wide" style="margin: 0; position: relative; border-radius: 24px; overflow: hidden; background: #F2DDE3"><img src="img/volume-brasileiro-face.jpg" alt="Cliente com cílios Volume Brasileiro" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; transform: scale(1.3); transform-origin: 50% 45%"><figcaption style="position: absolute; left: 14px; bottom: 14px; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; white-space: nowrap; background: rgba(255,252,250,0.6); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); color: #49363C; padding: 6px 10px; border-radius: 999px">Volume Brasileiro</figcaption></figure>
+        <figure class="g-wide" style="margin: 0; position: relative; border-radius: 24px; overflow: hidden; background: #EFD0D9"><img src="img/volume-4d.jpg" alt="Cliente com alongamento de cílios Volume 4D" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; transform: scale(1.5); transform-origin: 50% 55%"><figcaption style="position: absolute; left: 14px; bottom: 14px; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; white-space: nowrap; background: rgba(255,252,250,0.6); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); color: #49363C; padding: 6px 10px; border-radius: 999px">Volume 4D</figcaption></figure>
+        <figure class="g-wide" style="margin: 0; position: relative; border-radius: 24px; overflow: hidden; background: #E8B8C5"><img src="img/efeito-wispy-close.jpg" alt="Close de cílios Efeito Wispy" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 52%"><figcaption style="position: absolute; left: 14px; bottom: 14px; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; white-space: nowrap; background: rgba(255,252,250,0.6); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); color: #49363C; padding: 6px 10px; border-radius: 999px">Efeito Wispy</figcaption></figure>
       </div>
       <a href="https://www.instagram.com/fiosdelotus/" style="align-self: center; display: inline-flex; align-items: center; gap: 10px; color: #49363C; text-decoration: none; font-weight: 600; font-size: 16px; padding: 15px 26px; border-radius: 999px; border: 1.5px solid #C87591">
         <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"></circle></svg>
@@ -297,8 +415,6 @@ a{color:#A3536F}a:hover{color:#49363C}
       </a>
     </div>
   </section>
-
-  <!-- 05 DEPOIMENTOS -->
   <section id="depoimentos" style="background: #F7E9EC">
     <div style="max-width: 1240px; margin: 0 auto; padding: 112px 24px; display: flex; flex-direction: column; gap: 52px">
       <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px">
@@ -311,26 +427,37 @@ a{color:#A3536F}a:hover{color:#49363C}
         </a>
       </div>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 24px">
-        <sc-for list="{{reviews}}" as="r" hint-placeholder-count="2">
+        
           <figure style="margin: 0; background: #FFFCFA; border-radius: 28px; padding: 36px 32px; display: flex; flex-direction: column; gap: 22px; box-shadow: 0 8px 30px rgba(73,54,60,0.05)">
             <span role="img" aria-label="5 de 5 estrelas" style="display: flex; gap: 3px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="#C99A3E"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"></path></svg><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="#C99A3E"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"></path></svg><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="#C99A3E"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"></path></svg><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="#C99A3E"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"></path></svg><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="#C99A3E"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"></path></svg></span>
             <svg aria-hidden="true" width="34" height="26" viewBox="0 0 34 26" fill="#E8B8C5"><path d="M0 26V15C0 6.7 4.3 1.6 12.8 0l1.4 3.6C9.4 5 7.2 8 7 12h6v14H0zm19.7 0V15C19.7 6.7 24 1.6 32.5 0L34 3.6C29.1 5 27 8 26.7 12h6v14h-13z"></path></svg>
-            <blockquote style="margin: 0; font-family: 'LT Soul', 'Crimson Pro', Georgia, serif; font-style: italic; font-size: 20px; line-height: 1.5; color: #49363C">{{r.text}}</blockquote>
+            <blockquote style="margin: 0; font-family: 'LT Soul', 'Crimson Pro', Georgia, serif; font-style: italic; font-size: 20px; line-height: 1.5; color: #49363C">Além de ser super atenciosa e cuidadosa, tem uma mão maravilhosa e faz tudo com muito carinho. Meus cílios ficam perfeitos, exatamente como eu sempre quero! Obrigada pelo capricho e pela dedicação. Você arrasa demais!</blockquote>
             <figcaption style="display: flex; align-items: center; gap: 14px; margin-top: auto; padding-top: 20px; border-top: 1px solid #F0DDE2">
-              <span aria-hidden="true" style="width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%; background: #F7E9EC; border: 1px solid #E8B8C5; display: flex; align-items: center; justify-content: center; font-family: Quicksand, system-ui, sans-serif; font-size: 18px; color: #A3536F; font-weight: 600">{{r.initial}}</span>
+              <span aria-hidden="true" style="width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%; background: #F7E9EC; border: 1px solid #E8B8C5; display: flex; align-items: center; justify-content: center; font-family: Quicksand, system-ui, sans-serif; font-size: 18px; color: #A3536F; font-weight: 600">J</span>
               <span style="display: flex; flex-direction: column; gap: 3px">
-                <span style="font-weight: 600; font-size: 16px">{{r.name}}</span>
-                <span style="font-size: 13px; color: #6E555E">{{r.service}}</span>
+                <span style="font-weight: 600; font-size: 16px">Julia Bueno</span>
+                <span style="font-size: 13px; color: #6E555E">Avaliação no Google</span>
               </span>
             </figcaption>
           </figure>
-        </sc-for>
+        
+          <figure style="margin: 0; background: #FFFCFA; border-radius: 28px; padding: 36px 32px; display: flex; flex-direction: column; gap: 22px; box-shadow: 0 8px 30px rgba(73,54,60,0.05)">
+            <span role="img" aria-label="5 de 5 estrelas" style="display: flex; gap: 3px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="#C99A3E"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"></path></svg><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="#C99A3E"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"></path></svg><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="#C99A3E"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"></path></svg><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="#C99A3E"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"></path></svg><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="#C99A3E"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"></path></svg></span>
+            <svg aria-hidden="true" width="34" height="26" viewBox="0 0 34 26" fill="#E8B8C5"><path d="M0 26V15C0 6.7 4.3 1.6 12.8 0l1.4 3.6C9.4 5 7.2 8 7 12h6v14H0zm19.7 0V15C19.7 6.7 24 1.6 32.5 0L34 3.6C29.1 5 27 8 26.7 12h6v14h-13z"></path></svg>
+            <blockquote style="margin: 0; font-family: 'LT Soul', 'Crimson Pro', Georgia, serif; font-style: italic; font-size: 20px; line-height: 1.5; color: #49363C">Estou com a Mirella desde 2022 e não larguei mais, o fox eyes desde aquele tempo… amo tanto!</blockquote>
+            <figcaption style="display: flex; align-items: center; gap: 14px; margin-top: auto; padding-top: 20px; border-top: 1px solid #F0DDE2">
+              <span aria-hidden="true" style="width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%; background: #F7E9EC; border: 1px solid #E8B8C5; display: flex; align-items: center; justify-content: center; font-family: Quicksand, system-ui, sans-serif; font-size: 18px; color: #A3536F; font-weight: 600">M</span>
+              <span style="display: flex; flex-direction: column; gap: 3px">
+                <span style="font-weight: 600; font-size: 16px">Monalisa Silva</span>
+                <span style="font-size: 13px; color: #6E555E">Avaliação no Google</span>
+              </span>
+            </figcaption>
+          </figure>
+        
       </div>
     </div>
   </section>
-
-  <!-- 05b DÚVIDAS -->
-  <section id="duvidas" class="faq" style="background: #FFFCFA; width: 1437px; height: 673px">
+  <section id="duvidas" class="faq" style="background: #FFFCFA">
     <div style="max-width: 860px; margin: 0 auto; padding: 112px 24px; display: flex; flex-direction: column; gap: 40px">
       <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px">
         <span style="font-size: 13px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #7A5640">Dúvidas frequentes</span>
@@ -356,8 +483,6 @@ a{color:#A3536F}a:hover{color:#49363C}
       </div>
     </div>
   </section>
-
-  <!-- 06 CONTATO -->
   <section id="contato" style="background: #F7E9EC">
     <div style="max-width: 1240px; margin: 0 auto; padding: 112px 24px; display: flex; flex-wrap: wrap; gap: 56px; align-items: stretch">
       <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
@@ -374,22 +499,20 @@ a{color:#A3536F}a:hover{color:#49363C}
           </div>
           <div style="display: flex; gap: 18px; padding: 22px 0; border-bottom: 1px solid #EEDDE2">
             <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A77A57" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5z"></path></svg>
-            <div style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #7A5640">WhatsApp</span><span style="font-size: 17px; line-height: 1.6"><a href="{{wa}}" style="color: #49363C; text-decoration: none">(11) 94080-0684</a></span></div>
+            <div style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #7A5640">WhatsApp</span><span style="font-size: 17px; line-height: 1.6"><a href="https://wa.me/5511940800684?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20na%20Fios%20de%20Lotus." style="color: #49363C; text-decoration: none">(11) 94080-0684</a></span></div>
           </div>
         </div>
-        <a href="{{wa}}" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; background: {{accent}}; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 17px; padding: 18px 30px; border-radius: 999px">Agende pelo WhatsApp</a>
+        <a href="https://wa.me/5511940800684?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20na%20Fios%20de%20Lotus." style="align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; background: #A3536F; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 17px; padding: 18px 30px; border-radius: 999px">Agende pelo WhatsApp</a>
       </div>
       <div style="flex: 1 1 440px; min-width: 0; min-height: 420px; border-radius: 28px; background: #FFFCFA; position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; padding: 32px; box-sizing: border-box">
         <svg aria-hidden="true" width="100%" height="100%" viewBox="0 0 400 300" preserveAspectRatio="none" fill="none" stroke="#E8B8C5" stroke-width="1" style="position: absolute; inset: 0"><path d="M0 80 C 120 60, 200 140, 400 100"></path><path d="M0 190 C 140 170, 260 240, 400 200"></path><path d="M130 0 C 150 120, 110 200, 160 300"></path><path d="M290 0 C 270 110, 320 200, 280 300"></path></svg>
-        <span style="position: relative; width: 56px; height: 56px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: {{accent}}; display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 24px rgba(163,83,111,0.3)"><span style="width: 18px; height: 18px; border-radius: 50%; background: #FFFCFA"></span></span>
+        <span style="position: relative; width: 56px; height: 56px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: #A3536F; display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 24px rgba(163,83,111,0.3)"><span style="width: 18px; height: 18px; border-radius: 50%; background: #FFFCFA"></span></span>
         <span style="position: relative; font-family: Quicksand, system-ui, sans-serif; font-size: 20px; text-align: center; font-weight: 600">Fios de Lotus · Serraria, Diadema</span>
         <a href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Jos%C3%A9+Bonif%C3%A1cio+854+Diadema+SP" style="position: relative; background: #FFFCFA; color: #49363C; text-decoration: none; font-weight: 600; font-size: 16px; padding: 14px 22px; border-radius: 999px; box-shadow: 0 6px 18px rgba(73,54,60,0.1)">Abrir no Google Maps</a>
         <span style="position: relative; font-size: 15px; color: #6E555E; text-align: center">Rua José Bonifácio, 854 – Serraria</span>
       </div>
     </div>
   </section>
-
-  <!-- CTA FINAL -->
   <section style="background: #F7E9EC; padding: 0 24px 112px">
     <div style="max-width: 1240px; margin: 0 auto; background: #A3536F; border-radius: 36px; padding: clamp(48px, 7vw, 88px) clamp(24px, 6vw, 80px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 32px; position: relative; overflow: hidden">
       <svg aria-hidden="true" width="420" height="262" viewBox="0 0 64 40" fill="none" stroke="#C87591" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; right: -60px; bottom: -70px"><path d="M32 6c5 6 6 14 0 26-6-12-5-20 0-26z"></path><path d="M32 32c-3-9-9-15-18-17 1 9 7 15 18 17z"></path><path d="M32 32c3-9 9-15 18-17-1 9-7 15-18 17z"></path><path d="M32 32C24 28 14 27 6 30c7 4 17 5 26 2z"></path><path d="M32 32c8-4 18-5 26-2-7 4-17 5-26 2z"></path></svg>
@@ -397,14 +520,12 @@ a{color:#A3536F}a:hover{color:#49363C}
         <h2 style="margin: 0; font-family: Quicksand, system-ui, sans-serif; font-weight: 600; font-size: clamp(30px, 3.4vw, 46px); line-height: 1.15; color: #FFFCFA">Pronta para valorizar <em style="font-family: 'Allura', cursive; font-weight: 400; font-style: normal; font-size: 1.3em; line-height: 0.9; letter-spacing: 0">seu olhar?</em></h2>
         <p style="margin: 0; font-size: 18px; line-height: 1.7; color: #FBEAEF">Fale com a gente pelo WhatsApp e agende seu horário.</p>
       </div>
-      <a href="{{wa}}" style="position: relative; display: inline-flex; align-items: center; gap: 10px; background: #FFFCFA; color: #49363C; text-decoration: none; font-weight: 600; font-size: 17px; padding: 19px 32px; border-radius: 999px">
+      <a href="https://wa.me/5511940800684?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20na%20Fios%20de%20Lotus." style="position: relative; display: inline-flex; align-items: center; gap: 10px; background: #FFFCFA; color: #49363C; text-decoration: none; font-weight: 600; font-size: 17px; padding: 19px 32px; border-radius: 999px">
         <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A3536F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5z"></path></svg>
         Agende pelo WhatsApp
       </a>
     </div>
   </section>
-
-  <!-- FOOTER -->
   <footer style="background: #49363C; color: #E8DCDF">
     <div style="max-width: 1240px; margin: 0 auto; padding: 56px 24px 40px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px">
       <div style="display: flex; flex-direction: column; gap: 12px; flex: 1 1 260px">
@@ -422,69 +543,22 @@ a{color:#A3536F}a:hover{color:#49363C}
         <a href="#duvidas" style="color: #E8DCDF; text-decoration: none; padding: 8px 0">Dúvidas</a>
         <a href="#contato" style="color: #E8DCDF; text-decoration: none; padding: 8px 0">Contato</a>
       </nav>
-      <div style="font-size: 15px; line-height: 1.7; flex: 0 1 280px; display: flex; flex-direction: column; gap: 14px; align-items: flex-start"><span>Rua José Bonifácio, 854 – Serraria<br>Diadema – SP · 09980-150<br>Terça a sábado · 08:00 às 20:00</span><a href="{{wa}}" style="display: inline-flex; align-items: center; gap: 8px; background: #FFFCFA; color: #49363C; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 20px; border-radius: 999px"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5z"></path></svg>Agendar pelo WhatsApp</a></div>
+      <div style="font-size: 15px; line-height: 1.7; flex: 0 1 280px; display: flex; flex-direction: column; gap: 14px; align-items: flex-start"><span>Rua José Bonifácio, 854 – Serraria<br>Diadema – SP · 09980-150<br>Terça a sábado · 08:00 às 20:00</span><a href="https://wa.me/5511940800684?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20na%20Fios%20de%20Lotus." style="display: inline-flex; align-items: center; gap: 8px; background: #FFFCFA; color: #49363C; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 20px; border-radius: 999px"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5z"></path></svg>Agendar pelo WhatsApp</a></div>
     </div>
     <div style="max-width: 1240px; margin: 0 auto; padding: 20px 88px 28px 24px; border-top: 1px solid #5E4850; font-size: 13px; color: #CDBBC1">© 2026 Fios de Lotus. Todos os direitos reservados.</div>
   </footer>
-
-  <!-- WhatsApp flutuante -->
-  <a href="{{wa}}" aria-label="Agendar pelo WhatsApp" style="position: fixed; right: 16px; bottom: 16px; width: 52px; height: 52px; border-radius: 50%; background: {{accent}}; display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 28px rgba(73,54,60,0.28); z-index: 20">
+  <a href="https://wa.me/5511940800684?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20na%20Fios%20de%20Lotus." aria-label="Agendar pelo WhatsApp" style="position: fixed; right: calc(16px + env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); width: 52px; height: 52px; border-radius: 50%; background: #A3536F; display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 28px rgba(73,54,60,0.28); z-index: 20">
     <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5z"></path><path d="M9 10h6M9 13h4"></path></svg>
   </a>
 </div>
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#A3536F","options":["#A3536F","#C87591","#8E4560","#49363C"]},"whatsapp":{"editor":"text","default":"5511940800684"},"$preview":{"width":1440,"height":8000}}'>
-class Component extends DCLogic {
-  renderVals() {
-    const num = this.props.whatsapp ?? '5511940800684';
-    const base = 'https://wa.me/' + num + '?text=';
-    const msg = (t) => base + encodeURIComponent(t);
-    const imgs = {
-      'Volume Brasileiro': './assets/14316d720eef46522909dfb433aebc3f.jpg',
-      'Volume Brasileiro Castanho': './assets/f1f738bb45ea562f90c9ac8e88f6e274.jpg',
-      'Volume 4D': './assets/b7d5f0e0f77f47363692a8fa9c9396cc.jpg',
-      'Volume 5D': './assets/599411e69e02073829a02dd6c9ac8634.jpg',
-      'Volume 5D Castanho': './assets/672ee0692702620a23b4755a1569066c.jpg',
-      'Efeito Wispy': './assets/4a209e27a605aae1735fd328c7c4b40f.jpg',
-      'Efeito Molhado': './assets/a47898b4f1e89b1cfa27a13206e85d47.jpg',
-      'Volume Lótus': './assets/6a67f8422bc4b44331c68da6afedfb6a.jpg',
-      'Foxy Eyes Plus': './assets/1362ecfb33c3a7df5909a203feb3fc6c.jpg',
-      'Volume Sirena': './assets/4465e61974ffb509f71995b39eba4f5f.jpg'
-    };
-    const T = {
-      'Volume Brasileiro': { desc: 'Volume leve e natural, ideal para o dia a dia.', tech: '2 fios pré-moldados em Y · cor preta', time: '1h30 a 2h', apply: 'R$ 140,00', maint: 'R$ 90,00' },
-      'Volume Brasileiro Castanho': { desc: 'Volume leve e natural, com fios castanhos para um efeito ainda mais suave.', tech: '2 fios pré-moldados em Y · cor castanha', time: '1h40 a 2h', apply: 'R$ 140,00', maint: 'R$ 90,00' },
-      'Efeito Molhado': { desc: 'Fios agrupados que imitam cílios molhados, com acabamento marcante.', tech: '3 a 5 fios finos acoplados \u201cfechados\u201d', time: '1h40 a 2h', apply: 'R$ 140,00', maint: 'R$ 90,00' },
-      'Volume Lótus': { desc: 'O efeito molhado com curvatura suave, para um resultado marcante e natural.', tech: '3 a 5 fios finos acoplados \u201cfechados\u201d · curvatura C', time: '1h40 a 2h', apply: 'R$ 150,00', maint: 'R$ 100,00' },
-      'Volume 4D': { desc: 'Volume delicado e preenchido, com mais definição que o brasileiro.', tech: '4 fios pré-moldados em W · cor preta', time: '1h40 a 2h', apply: 'R$ 140,00', maint: 'R$ 90,00' },
-      'Volume 5D': { desc: 'Volume denso e marcante, sem perder a delicadeza.', tech: '5 fios pré-moldados em W · cor preta', time: '1h30 a 2h', apply: 'R$ 150,00', maint: 'R$ 100,00' },
-      'Volume 5D Castanho': { desc: 'O volume do 5D com fios castanhos, para um olhar preenchido e mais suave.', tech: '5 fios pré-moldados em W · cor castanha', time: '1h40 a 2h', apply: 'R$ 150,00', maint: 'R$ 100,00' },
-      'Efeito Wispy': { desc: 'Efeito texturizado, com pontas marcadas que dão leveza e um ar moderno ao olhar.', tech: '5 fios pré-moldados em W · cor castanha', time: '1h40 a 2h', apply: 'R$ 160,00', maint: 'R$ 100,00' },
-      'Foxy Eyes Plus': { desc: 'Olhar alongado e levantado no canto externo, no estilo \u201craposa\u201d.', tech: '5 fios pré-moldados · curvatura mais acentuada', time: '1h40 a 2h', apply: 'R$ 150,00', maint: 'R$ 100,00' },
-      'Volume Sirena': { desc: 'O efeito alongado do Foxy Eyes Plus em versão mais leve, com cerca de 60% de preenchimento.', tech: '4 fios pré-moldados · curvatura mais acentuada', time: '1h', apply: 'R$ 100,00', maint: '' }
-    };
-    const mk = (names) => names.map((name) => { const t = T[name]; return { ...t, name, img: imgs[name], alt: 'Cílios com a técnica ' + name, hasMaint: !!t.maint, noMaint: !t.maint, link: msg('Olá! Gostaria de agendar: ' + name) }; });
-    const reviews = [
-      { text: 'Além de ser super atenciosa e cuidadosa, tem uma mão maravilhosa e faz tudo com muito carinho. Meus cílios ficam perfeitos, exatamente como eu sempre quero! Obrigada pelo capricho e pela dedicação. Você arrasa demais!', name: 'Julia Bueno', initial: 'J', service: 'Avaliação no Google' },
-      { text: 'Estou com a Mirella desde 2022 e não larguei mais, o fox eyes desde aquele tempo… amo tanto!', name: 'Monalisa Silva', initial: 'M', service: 'Avaliação no Google' }
-    ];
-    const open = !!(this.state && this.state.menuOpen);
-    return {
-      accent: this.props.accent ?? '#A3536F',
-      wa: msg('Olá! Gostaria de agendar um horário na Fios de Lotus.'),
-      leves: mk(['Volume Brasileiro', 'Volume Brasileiro Castanho']),
-      molhado: mk(['Volume Lótus', 'Efeito Molhado']),
-      volume: mk(['Volume 4D', 'Volume 5D', 'Volume 5D Castanho', 'Efeito Wispy']),
-      alongados: mk(['Foxy Eyes Plus', 'Volume Sirena']),
-      reviews,
-      navClass: open ? 'open' : '',
-      menuExpanded: open ? 'true' : 'false',
-      menuLabel: open ? 'Fechar menu' : 'Abrir menu',
-      toggleMenu: () => this.setState({ menuOpen: !open }),
-      closeMenu: () => this.setState({ menuOpen: false })
-    };
-  }
-}
+<script>
+(function(){
+  var btn=document.getElementById('menu-btn'), nav=document.getElementById('site-nav');
+  if(!btn||!nav) return;
+  function set(open){ nav.classList.toggle('open',open); btn.setAttribute('aria-expanded',open?'true':'false'); btn.setAttribute('aria-label',open?'Fechar menu':'Abrir menu'); }
+  btn.addEventListener('click',function(){ set(!nav.classList.contains('open')); });
+  nav.addEventListener('click',function(e){ if(e.target.closest('a')) set(false); });
+})();
 </script>
 </body>
 </html>
